@@ -73,6 +73,7 @@ function editTodo(e) {
   submitbtn.style.display = "none";
   update.style.display = "inline";
   selectlist = e.parentNode;
+  input.focus()
 }
 
 function updatebtn() {
@@ -98,11 +99,32 @@ document.addEventListener("keydown", function (e) {
 
 function deleteAll(){
     todo.innerHTML=""
+
+    deleteShow.style.display= "none"
+    showDeleteStatus= false
 }
 
 // function
 
 
 function selectItem(){
+
+}
+
+function deleteSelected(){
+
+// console.log(todo.childNodes[0].childNodes[0].checked)
+for (let i = 0; i < todo.childNodes.length; i++) {
+   console.log (todo.childNodes[i].childNodes[0].checked)
+
+   if (todo.childNodes[i].childNodes[0].checked) {
+    todo.childNodes[i].remove()
+    i--
+    
+   }
+    
+}
+
+
 
 }
