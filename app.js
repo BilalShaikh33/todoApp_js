@@ -8,9 +8,21 @@ var showDeleteStatus = false
 
 var selectlist = null;
 function submit() {
+
+  for (let i = 0; i < todo.childNodes.length; i++) {
+       if (todo.childNodes[i].childNodes[0].checked) {
+        showchecked = true
+       }
+
+    
+    
+  }
+
   if (input.value == "") {
     return null;
-  }
+  } 
+  var showchecked = false;
+
 
   var liTag = document.createElement("li"); // tag new
   var inputSelect  = document.createElement("input")
